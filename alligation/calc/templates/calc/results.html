@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Alligation Result</title>
+
+    <!-- Modern CSS (no external libraries needed) -->
+    <style>
+        :root {
+            --primary: #2563eb;
+            --secondary: #0f172a;
+            --background: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --success: #16a34a;
+        }
+
+        * {
+            box-sizing: border-box;
+            font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #e0f2fe, #f8fafc);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-main);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 480px;
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        h1 {
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            font-size: 1.8rem;
+            color: var(--secondary);
+        }
+
+        .result-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.9rem 1rem;
+            margin-bottom: 0.75rem;
+            background: #f1f5f9;
+            border-radius: 10px;
+            font-size: 0.95rem;
+        }
+
+        .result-item span {
+            color: var(--text-muted);
+        }
+
+        .result-item strong {
+            color: var(--success);
+            font-weight: 600;
+        }
+
+        .total {
+            background: #ecfeff;
+            border: 1px solid #67e8f9;
+        }
+
+        .total strong {
+            color: var(--primary);
+            font-size: 1.05rem;
+        }
+
+        .actions {
+            margin-top: 1.5rem;
+            text-align: center;
+        }
+
+        .actions a {
+            display: inline-block;
+            text-decoration: none;
+            background: var(--primary);
+            color: #ffffff;
+            padding: 0.7rem 1.4rem;
+            border-radius: 999px;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+        }
+
+        .actions a:hover {
+            background: #1d4ed8;
+            transform: translateY(-1px);
+        }
+
+        footer {
+            margin-top: 2rem;
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        footer strong {
+            color: var(--secondary);
+            letter-spacing: 0.5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Alligation Result</h1>
+
+        <div class="result-item total">
+            <span>Total Volume</span>
+            <strong>{{ total_volume }} mL</strong>
+        </div>
+
+        <div class="result-item">
+            <span>High Strength ({{ high_strength }}%)</span>
+            <strong>{{ high_volume }} mL</strong>
+        </div>
+
+        <div class="result-item">
+            <span>Low Strength ({{ low_strength }}%)</span>
+            <strong>{{ low_volume }} mL</strong>
+        </div>
+
+        <div class="actions">
+            <a href="{% url 'calc:form' %}">← Back to Calculator</a>
+        </div>
+
+        <footer>
+            Developed by <strong> & HYPER-REALSIM</strong>
+        </footer>
+    </div>
+</body>
+</html>

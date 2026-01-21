@@ -1,0 +1,19 @@
+# Python compiled files
+*.pyc
+__pycache__/
+
+# Django database
+db.sqlite3
+
+# Environment variables
+.env
+
+# Django static and media files
+/staticfiles/
+media/
+
+# VS Code settings (optional)
+.vscode/
+
+# MacOS system files (optional)
+.DS_Store
